@@ -64,14 +64,14 @@ public class Class1 implements WMUnknown {
     public void method6(Buffer buffer_1) {
         int10 = buffer_1.readUByte();
         int15 = buffer_1.readUByte();
-        int11 = buffer_1.method441();
-        int7 = buffer_1.method441();
-        int9 = buffer_1.method441();
-        int6 = buffer_1.method441();
-        int14 = buffer_1.method441();
-        int12 = buffer_1.method441();
-        int13 = buffer_1.method441();
-        int8 = buffer_1.method441();
+        int11 = buffer_1.readUShort();
+        int7 = buffer_1.readUShort();
+        int9 = buffer_1.readUShort();
+        int6 = buffer_1.readUShort();
+        int14 = buffer_1.readUShort();
+        int12 = buffer_1.readUShort();
+        int13 = buffer_1.readUShort();
+        int8 = buffer_1.readUShort();
         method7();
     }
 

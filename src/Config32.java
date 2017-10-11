@@ -66,7 +66,7 @@ public class Config32 extends Cacheable {
         else if (i_2 == 8)
             string41 = buffer_1.method449();
         else if (i_2 == 9)
-            int560 = buffer_1.method441();
+            int560 = buffer_1.readUShort();
         else if (i_2 == 10)
             int566 = buffer_1.readShort();
         else if (i_2 == 11)
@@ -76,19 +76,19 @@ public class Config32 extends Cacheable {
         else if (i_2 == 13)
             int569 = buffer_1.readShort();
         else if (i_2 == 14)
-            int567 = buffer_1.method441();
+            int567 = buffer_1.readUShort();
         else if (i_2 == 17 || i_2 == 18) {
-            int570 = buffer_1.method441();
+            int570 = buffer_1.readUShort();
             if (int570 == 65535)
                 int570 = -1;
 
-            int559 = buffer_1.method441();
+            int559 = buffer_1.readUShort();
             if (int559 == 65535)
                 int559 = -1;
 
             int i_4 = -1;
             if (i_2 == 18) {
-                i_4 = buffer_1.method441();
+                i_4 = buffer_1.readUShort();
                 if (i_4 == 65535)
                     i_4 = -1;
             }
@@ -97,7 +97,7 @@ public class Config32 extends Cacheable {
             intArray94 = new int[i_5 + 2];
 
             for (int i_6 = 0; i_6 <= i_5; i_6++) {
-                intArray94[i_6] = buffer_1.method441();
+                intArray94[i_6] = buffer_1.readUShort();
                 if (intArray94[i_6] == 65535)
                     intArray94[i_6] = -1;
             }

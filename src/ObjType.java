@@ -117,21 +117,21 @@ public class ObjType extends Cacheable {
 
     void decode(Buffer buffer_1, int i_2) {
         if (i_2 == 1)
-            int574 = buffer_1.method441();
+            int574 = buffer_1.readUShort();
         else if (i_2 == 2)
             name = buffer_1.method448();
         else if (i_2 == 4)
-            zoom2d = buffer_1.method441();
+            zoom2d = buffer_1.readUShort();
         else if (i_2 == 5)
-            xan2d = buffer_1.method441();
+            xan2d = buffer_1.readUShort();
         else if (i_2 == 6)
-            yan2d = buffer_1.method441();
+            yan2d = buffer_1.readUShort();
         else if (i_2 == 7) {
-            xof2d = buffer_1.method441();
+            xof2d = buffer_1.readUShort();
             if (xof2d > 32767)
                 xof2d -= 65536;
         } else if (i_2 == 8) {
-            yof2d = buffer_1.method441();
+            yof2d = buffer_1.readUShort();
             if (yof2d > 32767)
                 yof2d -= 65536;
         } else if (i_2 == 11)
@@ -141,15 +141,15 @@ public class ObjType extends Cacheable {
         else if (i_2 == 16)
             members = true;
         else if (i_2 == 23) {
-            manmodel1 = buffer_1.method441();
+            manmodel1 = buffer_1.readUShort();
             int576 = buffer_1.readUByte();
         } else if (i_2 == 24)
-            manmodel2 = buffer_1.method441();
+            manmodel2 = buffer_1.readUShort();
         else if (i_2 == 25) {
-            womanmodel1 = buffer_1.method441();
+            womanmodel1 = buffer_1.readUShort();
             int577 = buffer_1.readUByte();
         } else if (i_2 == 26)
-            womanmodel2 = buffer_1.method441();
+            womanmodel2 = buffer_1.readUShort();
         else if (i_2 >= 30 && i_2 < 35) {
             op[i_2 - 30] = buffer_1.method448();
             if (op[i_2 - 30].equalsIgnoreCase("Hidden"))
@@ -165,8 +165,8 @@ public class ObjType extends Cacheable {
                 recol_d = new short[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++) {
-                    recol_s[i_5] = (short) buffer_1.method441();
-                    recol_d[i_5] = (short) buffer_1.method441();
+                    recol_s[i_5] = (short) buffer_1.readUShort();
+                    recol_d[i_5] = (short) buffer_1.readUShort();
                 }
             } else if (i_2 == 41) {
                 i_4 = buffer_1.readUByte();
@@ -174,45 +174,45 @@ public class ObjType extends Cacheable {
                 retex_d = new short[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++) {
-                    retex_s[i_5] = (short) buffer_1.method441();
-                    retex_d[i_5] = (short) buffer_1.method441();
+                    retex_s[i_5] = (short) buffer_1.readUShort();
+                    retex_d[i_5] = (short) buffer_1.readUShort();
                 }
             } else if (i_2 == 42)
                 int575 = buffer_1.method440();
             else if (i_2 == 65)
                 stockmarket = true;
             else if (i_2 == 78)
-                manmodel3 = buffer_1.method441();
+                manmodel3 = buffer_1.readUShort();
             else if (i_2 == 79)
-                womanmodel3 = buffer_1.method441();
+                womanmodel3 = buffer_1.readUShort();
             else if (i_2 == 90)
-                manhead = buffer_1.method441();
+                manhead = buffer_1.readUShort();
             else if (i_2 == 91)
-                womanhead = buffer_1.method441();
+                womanhead = buffer_1.readUShort();
             else if (i_2 == 92)
-                manhead2 = buffer_1.method441();
+                manhead2 = buffer_1.readUShort();
             else if (i_2 == 93)
-                womanhead2 = buffer_1.method441();
+                womanhead2 = buffer_1.readUShort();
             else if (i_2 == 95)
-                zan2d = buffer_1.method441();
+                zan2d = buffer_1.readUShort();
             else if (i_2 == 97)
-                certlink = buffer_1.method441();
+                certlink = buffer_1.readUShort();
             else if (i_2 == 98)
-                certtemplate = buffer_1.method441();
+                certtemplate = buffer_1.readUShort();
             else if (i_2 >= 100 && i_2 < 110) {
                 if (countobj == null) {
                     countobj = new int[10];
                     countco = new int[10];
                 }
 
-                countobj[i_2 - 100] = buffer_1.method441();
-                countco[i_2 - 100] = buffer_1.method441();
+                countobj[i_2 - 100] = buffer_1.readUShort();
+                countco[i_2 - 100] = buffer_1.readUShort();
             } else if (i_2 == 110)
-                resizex = buffer_1.method441();
+                resizex = buffer_1.readUShort();
             else if (i_2 == 111)
-                resizey = buffer_1.method441();
+                resizey = buffer_1.readUShort();
             else if (i_2 == 112)
-                model = buffer_1.method441();
+                model = buffer_1.readUShort();
             else if (i_2 == 113)
                 ambient = buffer_1.method440();
             else if (i_2 == 114)
@@ -220,13 +220,13 @@ public class ObjType extends Cacheable {
             else if (i_2 == 115)
                 team = buffer_1.readUByte();
             else if (i_2 == 139)
-                boughtlink = buffer_1.method441();
+                boughtlink = buffer_1.readUShort();
             else if (i_2 == 140)
-                boughttemplate = buffer_1.method441();
+                boughttemplate = buffer_1.readUShort();
             else if (i_2 == 148)
-                int578 = buffer_1.method441();
+                int578 = buffer_1.readUShort();
             else if (i_2 == 149)
-                int579 = buffer_1.method441();
+                int579 = buffer_1.readUShort();
             else if (i_2 == 249)
                 paramList4 = StaticClass46.staticMethod195(buffer_1, paramList4);
         }

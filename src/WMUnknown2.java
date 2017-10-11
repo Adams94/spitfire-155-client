@@ -59,10 +59,10 @@ public class WMUnknown2 implements WMUnknown {
     public void method6(Buffer buffer_1) {
         int48 = buffer_1.readUByte();
         int49 = buffer_1.readUByte();
-        int45 = buffer_1.method441();
-        int46 = buffer_1.method441();
-        int47 = buffer_1.method441();
-        int44 = buffer_1.method441();
+        int45 = buffer_1.readUShort();
+        int46 = buffer_1.readUShort();
+        int47 = buffer_1.readUShort();
+        int44 = buffer_1.readUShort();
         method23();
     }
 

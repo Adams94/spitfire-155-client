@@ -68,13 +68,13 @@ public class Class2 implements WMUnknown {
     public void method6(Buffer buffer_1) {
         int70 = buffer_1.readUByte();
         int67 = buffer_1.readUByte();
-        int75 = buffer_1.method441();
+        int75 = buffer_1.readUShort();
         int72 = buffer_1.readUByte();
-        int69 = buffer_1.method441();
+        int69 = buffer_1.readUShort();
         int71 = buffer_1.readUByte();
-        int68 = buffer_1.method441();
+        int68 = buffer_1.readUShort();
         int73 = buffer_1.readUByte();
-        int74 = buffer_1.method441();
+        int74 = buffer_1.readUShort();
         int66 = buffer_1.readUByte();
         method81();
     }

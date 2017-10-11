@@ -73,23 +73,23 @@ public class SoundFilter {
         intArray31[0] = i_3 >> 4;
         intArray31[1] = i_3 & 0xf;
         if (i_3 != 0) {
-            intArray32[0] = buffer_1.method441();
-            intArray32[1] = buffer_1.method441();
+            intArray32[0] = buffer_1.readUShort();
+            intArray32[1] = buffer_1.readUShort();
             int i_4 = buffer_1.readUByte();
 
             int i_5;
             int i_6;
             for (i_5 = 0; i_5 < 2; i_5++)
                 for (i_6 = 0; i_6 < intArray31[i_5]; i_6++) {
-                    intArrayArrayArray1[i_5][0][i_6] = buffer_1.method441();
-                    intArrayArrayArray2[i_5][0][i_6] = buffer_1.method441();
+                    intArrayArrayArray1[i_5][0][i_6] = buffer_1.readUShort();
+                    intArrayArrayArray2[i_5][0][i_6] = buffer_1.readUShort();
                 }
 
             for (i_5 = 0; i_5 < 2; i_5++)
                 for (i_6 = 0; i_6 < intArray31[i_5]; i_6++)
                     if ((i_4 & 1 << i_5 * 4 << i_6) != 0) {
-                        intArrayArrayArray1[i_5][1][i_6] = buffer_1.method441();
-                        intArrayArrayArray2[i_5][1][i_6] = buffer_1.method441();
+                        intArrayArrayArray1[i_5][1][i_6] = buffer_1.readUShort();
+                        intArrayArrayArray2[i_5][1][i_6] = buffer_1.readUShort();
                     } else {
                         intArrayArrayArray1[i_5][1][i_6] = intArrayArrayArray1[i_5][0][i_6];
                         intArrayArrayArray2[i_5][1][i_6] = intArrayArrayArray2[i_5][0][i_6];

@@ -197,7 +197,7 @@ public class Buffer extends Node {
         return buf[off++];
     }
 
-    public int method441() {
+    public int readUShort() {
         off += 2;
         return ((buf[off - 2] & 0xff) << 8) + (buf[off - 1] & 0xff);
     }
@@ -288,23 +288,23 @@ public class Buffer extends Node {
 
     public int method452() {
         int i_2 = buf[off] & 0xff;
-        return i_2 < 128 ? readUByte() - 64 : method441() - 49152;
+        return i_2 < 128 ? readUByte() - 64 : readUShort() - 49152;
     }
 
     public int method453() {
         int i_2 = buf[off] & 0xff;
-        return i_2 < 128 ? readUByte() : method441() - 32768;
+        return i_2 < 128 ? readUByte() : readUShort() - 32768;
     }
 
     public int method454() {
-        return buf[off] < 0 ? readInt() & 0x7fffffff : method441();
+        return buf[off] < 0 ? readInt() & 0x7fffffff : readUShort();
     }
 
     public int method455() {
         if (buf[off] < 0)
             return readInt() & 0x7fffffff;
         else {
-            int i_2 = method441();
+            int i_2 = readUShort();
             return i_2 == 32767 ? -1 : i_2;
         }
     }
@@ -528,7 +528,7 @@ public class Buffer extends Node {
         buf[off++] = (byte) i_1;
     }
 
-    public int method481() {
+    public int readU24Int() {
         off += 3;
         return (buf[off - 3] & 0xff) + ((buf[off - 2] & 0xff) << 8) + ((buf[off - 1] & 0xff) << 16);
     }

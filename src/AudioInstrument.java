@@ -282,8 +282,8 @@ public class AudioInstrument {
 
         int145 = buffer_1.method453();
         int146 = buffer_1.method453();
-        int147 = buffer_1.method441();
-        int148 = buffer_1.method441();
+        int147 = buffer_1.readUShort();
+        int148 = buffer_1.readUShort();
         soundFilter1 = new SoundFilter();
         audioEnvelope6 = new AudioEnvelope();
         soundFilter1.method172(buffer_1, audioEnvelope6);

@@ -24,13 +24,13 @@ public class World {
                 byte[] bytes_1 = staticWorldMap1.method228();
                 Buffer buffer_2 = new Buffer(bytes_1);
                 buffer_2.readInt();
-                staticInt47 = buffer_2.method441();
+                staticInt47 = buffer_2.readUShort();
                 DataClass8.staticWorldArray1 = new World[staticInt47];
 
                 World world_4;
                 for (int i_3 = 0; i_3 < staticInt47; world_4.int98 = i_3++) {
                     world_4 = DataClass8.staticWorldArray1[i_3] = new World();
-                    world_4.int94 = buffer_2.method441();
+                    world_4.int94 = buffer_2.readUShort();
                     world_4.int95 = buffer_2.readInt();
                     world_4.string8 = buffer_2.method448();
                     world_4.string9 = buffer_2.method448();

@@ -42,7 +42,7 @@ public class HealthBarType extends Cacheable {
 
     void decode(Buffer buffer_1, int i_2) {
         if (i_2 == 1)
-            buffer_1.method441();
+            buffer_1.readUShort();
         else if (i_2 == 2)
             int595 = buffer_1.readUByte();
         else if (i_2 == 3)
@@ -50,7 +50,7 @@ public class HealthBarType extends Cacheable {
         else if (i_2 == 4)
             int597 = 0;
         else if (i_2 == 5)
-            int601 = buffer_1.method441();
+            int601 = buffer_1.readUShort();
         else if (i_2 == 6)
             buffer_1.readUByte();
         else if (i_2 == 7)
@@ -58,7 +58,7 @@ public class HealthBarType extends Cacheable {
         else if (i_2 == 8)
             int603 = buffer_1.method455();
         else if (i_2 == 11)
-            int597 = buffer_1.method441();
+            int597 = buffer_1.readUShort();
         else if (i_2 == 14)
             int604 = buffer_1.readUByte();
         else if (i_2 == 15)

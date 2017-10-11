@@ -78,8 +78,8 @@ public class Mesh extends Renderable {
         Buffer buffer_7 = new Buffer(bytes_1);
         Buffer buffer_8 = new Buffer(bytes_1);
         buffer_2.off = bytes_1.length - 23;
-        int i_9 = buffer_2.method441();
-        int i_10 = buffer_2.method441();
+        int i_9 = buffer_2.readUShort();
+        int i_10 = buffer_2.readUShort();
         int i_11 = buffer_2.readUByte();
         int i_12 = buffer_2.readUByte();
         int i_13 = buffer_2.readUByte();
@@ -87,11 +87,11 @@ public class Mesh extends Renderable {
         int i_15 = buffer_2.readUByte();
         int i_16 = buffer_2.readUByte();
         int i_17 = buffer_2.readUByte();
-        int i_18 = buffer_2.method441();
-        int i_19 = buffer_2.method441();
-        int i_20 = buffer_2.method441();
-        int i_21 = buffer_2.method441();
-        int i_22 = buffer_2.method441();
+        int i_18 = buffer_2.readUShort();
+        int i_19 = buffer_2.readUShort();
+        int i_20 = buffer_2.readUShort();
+        int i_21 = buffer_2.readUShort();
+        int i_22 = buffer_2.readUShort();
         int i_23 = 0;
         int i_24 = 0;
         int i_25 = 0;
@@ -261,7 +261,7 @@ public class Mesh extends Renderable {
         buffer_8.off = i_36;
 
         for (i_51 = 0; i_51 < i_10; i_51++) {
-            shortArray19[i_51] = (short) buffer_2.method441();
+            shortArray19[i_51] = (short) buffer_2.readUShort();
             if (i_12 == 1)
                 byteArray17[i_51] = buffer_3.method440();
 
@@ -275,7 +275,7 @@ public class Mesh extends Renderable {
                 intArray110[i_51] = buffer_6.readUByte();
 
             if (i_16 == 1)
-                shortArray20[i_51] = (short) (buffer_7.method441() - 1);
+                shortArray20[i_51] = (short) (buffer_7.readUShort() - 1);
 
             if (byteArray14 != null && shortArray20[i_51] != -1)
                 byteArray14[i_51] = (byte) (buffer_8.readUByte() - 1);
@@ -341,46 +341,46 @@ public class Mesh extends Renderable {
         for (i_55 = 0; i_55 < i_11; i_55++) {
             i_56 = byteArray15[i_55] & 0xff;
             if (i_56 == 0) {
-                shortArray22[i_55] = (short) buffer_2.method441();
-                shortArray23[i_55] = (short) buffer_2.method441();
-                shortArray24[i_55] = (short) buffer_2.method441();
+                shortArray22[i_55] = (short) buffer_2.readUShort();
+                shortArray23[i_55] = (short) buffer_2.readUShort();
+                shortArray24[i_55] = (short) buffer_2.readUShort();
             }
 
             if (i_56 == 1) {
-                shortArray22[i_55] = (short) buffer_3.method441();
-                shortArray23[i_55] = (short) buffer_3.method441();
-                shortArray24[i_55] = (short) buffer_3.method441();
-                shortArray18[i_55] = (short) buffer_4.method441();
-                shortArray25[i_55] = (short) buffer_4.method441();
-                shortArray21[i_55] = (short) buffer_4.method441();
-                shortArray28[i_55] = (short) buffer_5.method441();
+                shortArray22[i_55] = (short) buffer_3.readUShort();
+                shortArray23[i_55] = (short) buffer_3.readUShort();
+                shortArray24[i_55] = (short) buffer_3.readUShort();
+                shortArray18[i_55] = (short) buffer_4.readUShort();
+                shortArray25[i_55] = (short) buffer_4.readUShort();
+                shortArray21[i_55] = (short) buffer_4.readUShort();
+                shortArray28[i_55] = (short) buffer_5.readUShort();
                 byteArray16[i_55] = buffer_6.method440();
-                shortArray27[i_55] = (short) buffer_7.method441();
+                shortArray27[i_55] = (short) buffer_7.readUShort();
             }
 
             if (i_56 == 2) {
-                shortArray22[i_55] = (short) buffer_3.method441();
-                shortArray23[i_55] = (short) buffer_3.method441();
-                shortArray24[i_55] = (short) buffer_3.method441();
-                shortArray18[i_55] = (short) buffer_4.method441();
-                shortArray25[i_55] = (short) buffer_4.method441();
-                shortArray21[i_55] = (short) buffer_4.method441();
-                shortArray28[i_55] = (short) buffer_5.method441();
+                shortArray22[i_55] = (short) buffer_3.readUShort();
+                shortArray23[i_55] = (short) buffer_3.readUShort();
+                shortArray24[i_55] = (short) buffer_3.readUShort();
+                shortArray18[i_55] = (short) buffer_4.readUShort();
+                shortArray25[i_55] = (short) buffer_4.readUShort();
+                shortArray21[i_55] = (short) buffer_4.readUShort();
+                shortArray28[i_55] = (short) buffer_5.readUShort();
                 byteArray16[i_55] = buffer_6.method440();
-                shortArray27[i_55] = (short) buffer_7.method441();
-                shortArray26[i_55] = (short) buffer_7.method441();
+                shortArray27[i_55] = (short) buffer_7.readUShort();
+                shortArray26[i_55] = (short) buffer_7.readUShort();
             }
 
             if (i_56 == 3) {
-                shortArray22[i_55] = (short) buffer_3.method441();
-                shortArray23[i_55] = (short) buffer_3.method441();
-                shortArray24[i_55] = (short) buffer_3.method441();
-                shortArray18[i_55] = (short) buffer_4.method441();
-                shortArray25[i_55] = (short) buffer_4.method441();
-                shortArray21[i_55] = (short) buffer_4.method441();
-                shortArray28[i_55] = (short) buffer_5.method441();
+                shortArray22[i_55] = (short) buffer_3.readUShort();
+                shortArray23[i_55] = (short) buffer_3.readUShort();
+                shortArray24[i_55] = (short) buffer_3.readUShort();
+                shortArray18[i_55] = (short) buffer_4.readUShort();
+                shortArray25[i_55] = (short) buffer_4.readUShort();
+                shortArray21[i_55] = (short) buffer_4.readUShort();
+                shortArray28[i_55] = (short) buffer_5.readUShort();
                 byteArray16[i_55] = buffer_6.method440();
-                shortArray27[i_55] = (short) buffer_7.method441();
+                shortArray27[i_55] = (short) buffer_7.readUShort();
             }
         }
 
@@ -388,9 +388,9 @@ public class Mesh extends Renderable {
         i_55 = buffer_2.readUByte();
         if (i_55 != 0) {
             new DataClass8();
-            buffer_2.method441();
-            buffer_2.method441();
-            buffer_2.method441();
+            buffer_2.readUShort();
+            buffer_2.readUShort();
+            buffer_2.readUShort();
             buffer_2.readInt();
         }
 
@@ -405,18 +405,18 @@ public class Mesh extends Renderable {
         Buffer buffer_7 = new Buffer(bytes_1);
         Buffer buffer_8 = new Buffer(bytes_1);
         buffer_4.off = bytes_1.length - 18;
-        int i_9 = buffer_4.method441();
-        int i_10 = buffer_4.method441();
+        int i_9 = buffer_4.readUShort();
+        int i_10 = buffer_4.readUShort();
         int i_11 = buffer_4.readUByte();
         int i_12 = buffer_4.readUByte();
         int i_13 = buffer_4.readUByte();
         int i_14 = buffer_4.readUByte();
         int i_15 = buffer_4.readUByte();
         int i_16 = buffer_4.readUByte();
-        int i_17 = buffer_4.method441();
-        int i_18 = buffer_4.method441();
-        int i_19 = buffer_4.method441();
-        int i_20 = buffer_4.method441();
+        int i_17 = buffer_4.readUShort();
+        int i_18 = buffer_4.readUShort();
+        int i_19 = buffer_4.readUShort();
+        int i_20 = buffer_4.readUShort();
         byte b_21 = 0;
         int i_45 = b_21 + i_9;
         int i_23 = i_45;
@@ -534,7 +534,7 @@ public class Mesh extends Renderable {
         buffer_8.off = i_25;
 
         for (i_38 = 0; i_38 < i_10; i_38++) {
-            shortArray19[i_38] = (short) buffer_4.method441();
+            shortArray19[i_38] = (short) buffer_4.readUShort();
             if (i_12 == 1) {
                 i_39 = buffer_5.readUByte();
                 if ((i_39 & 0x1) == 1) {
@@ -620,9 +620,9 @@ public class Mesh extends Renderable {
 
         for (i_42 = 0; i_42 < i_11; i_42++) {
             byteArray15[i_42] = 0;
-            shortArray22[i_42] = (short) buffer_4.method441();
-            shortArray23[i_42] = (short) buffer_4.method441();
-            shortArray24[i_42] = (short) buffer_4.method441();
+            shortArray22[i_42] = (short) buffer_4.readUShort();
+            shortArray23[i_42] = (short) buffer_4.readUShort();
+            shortArray24[i_42] = (short) buffer_4.readUShort();
         }
 
         if (byteArray14 != null) {

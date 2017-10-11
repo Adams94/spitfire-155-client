@@ -11,7 +11,7 @@ public class CompressedMidi extends Node {
     CompressedMidi(Buffer buffer_1) {
         buffer_1.off = buffer_1.buf.length - 3;
         int i_2 = buffer_1.readUByte();
-        int i_3 = buffer_1.method441();
+        int i_3 = buffer_1.readUShort();
         int i_4 = 14 + i_2 * 10;
         buffer_1.off = 0;
         int i_5 = 0;

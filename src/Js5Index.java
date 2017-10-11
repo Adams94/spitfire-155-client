@@ -35,7 +35,7 @@ public abstract class Js5Index {
             if (i_4 >= 7)
                 numGroups = buffer_3.method454();
             else
-                numGroups = buffer_3.method441();
+                numGroups = buffer_3.readUShort();
 
             int i_6 = 0;
             int i_7 = -1;
@@ -49,7 +49,7 @@ public abstract class Js5Index {
                 }
             else
                 for (i_8 = 0; i_8 < numGroups; i_8++) {
-                    groupIds[i_8] = i_6 += buffer_3.method441();
+                    groupIds[i_8] = i_6 += buffer_3.readUShort();
                     if (groupIds[i_8] > i_7)
                         i_7 = groupIds[i_8];
                 }
@@ -76,7 +76,7 @@ public abstract class Js5Index {
                 groupVersions[groupIds[i_8]] = buffer_3.readInt();
 
             for (i_8 = 0; i_8 < numGroups; i_8++)
-                numFiles[groupIds[i_8]] = buffer_3.method441();
+                numFiles[groupIds[i_8]] = buffer_3.readUShort();
 
             int i_9;
             int i_10;
@@ -108,7 +108,7 @@ public abstract class Js5Index {
                     fileIds[i_9] = new int[i_10];
 
                     for (i_12 = 0; i_12 < i_10; i_12++) {
-                        i_13 = fileIds[i_9][i_12] = i_6 += buffer_3.method441();
+                        i_13 = fileIds[i_9][i_12] = i_6 += buffer_3.readUShort();
                         if (i_13 > i_11)
                             i_11 = i_13;
                     }

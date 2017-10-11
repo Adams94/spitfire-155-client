@@ -120,7 +120,7 @@ public class LocType extends Cacheable {
                     intArray85 = new int[i_4];
 
                     for (i_5 = 0; i_5 < i_4; i_5++) {
-                        intArray85[i_5] = buffer_1.method441();
+                        intArray85[i_5] = buffer_1.readUShort();
                         intArray84[i_5] = buffer_1.readUByte();
                     }
                 }
@@ -136,7 +136,7 @@ public class LocType extends Cacheable {
                     intArray85 = new int[i_4];
 
                     for (i_5 = 0; i_5 < i_4; i_5++)
-                        intArray85[i_5] = buffer_1.method441();
+                        intArray85[i_5] = buffer_1.readUShort();
                 }
         } else if (i_2 == 14)
             int518 = buffer_1.readUByte();
@@ -156,7 +156,7 @@ public class LocType extends Cacheable {
         else if (i_2 == 23)
             bool56 = true;
         else if (i_2 == 24) {
-            int532 = buffer_1.method441();
+            int532 = buffer_1.readUShort();
             if (int532 == 65535)
                 int532 = -1;
         } else if (i_2 == 27)
@@ -177,8 +177,8 @@ public class LocType extends Cacheable {
             shortArray2 = new short[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++) {
-                shortArray5[i_5] = (short) buffer_1.method441();
-                shortArray2[i_5] = (short) buffer_1.method441();
+                shortArray5[i_5] = (short) buffer_1.readUShort();
+                shortArray2[i_5] = (short) buffer_1.readUShort();
             }
         } else if (i_2 == 41) {
             i_4 = buffer_1.readUByte();
@@ -186,21 +186,21 @@ public class LocType extends Cacheable {
             shortArray4 = new short[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++) {
-                shortArray3[i_5] = (short) buffer_1.method441();
-                shortArray4[i_5] = (short) buffer_1.method441();
+                shortArray3[i_5] = (short) buffer_1.readUShort();
+                shortArray4[i_5] = (short) buffer_1.readUShort();
             }
         } else if (i_2 == 62)
             bool53 = true;
         else if (i_2 == 64)
             bool58 = false;
         else if (i_2 == 65)
-            int513 = buffer_1.method441();
+            int513 = buffer_1.readUShort();
         else if (i_2 == 66)
-            int526 = buffer_1.method441();
+            int526 = buffer_1.readUShort();
         else if (i_2 == 67)
-            int527 = buffer_1.method441();
+            int527 = buffer_1.readUShort();
         else if (i_2 == 68)
-            int517 = buffer_1.method441();
+            int517 = buffer_1.readUShort();
         else if (i_2 == 69)
             buffer_1.readUByte();
         else if (i_2 == 70)
@@ -217,35 +217,35 @@ public class LocType extends Cacheable {
             int531 = buffer_1.readUByte();
         else if (i_2 != 77 && i_2 != 92) {
             if (i_2 == 78) {
-                int534 = buffer_1.method441();
+                int534 = buffer_1.readUShort();
                 int535 = buffer_1.readUByte();
             } else if (i_2 == 79) {
-                int516 = buffer_1.method441();
-                int525 = buffer_1.method441();
+                int516 = buffer_1.readUShort();
+                int525 = buffer_1.readUShort();
                 int535 = buffer_1.readUByte();
                 i_4 = buffer_1.readUByte();
                 intArray87 = new int[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++)
-                    intArray87[i_5] = buffer_1.method441();
+                    intArray87[i_5] = buffer_1.readUShort();
             } else if (i_2 == 81)
                 int523 = buffer_1.readUByte() * 256;
             else if (i_2 == 82)
-                int524 = buffer_1.method441();
+                int524 = buffer_1.readUShort();
             else if (i_2 == 249)
                 paramList2 = StaticClass46.staticMethod195(buffer_1, paramList2);
         } else {
-            int533 = buffer_1.method441();
+            int533 = buffer_1.readUShort();
             if (int533 == 65535)
                 int533 = -1;
 
-            int528 = buffer_1.method441();
+            int528 = buffer_1.readUShort();
             if (int528 == 65535)
                 int528 = -1;
 
             i_4 = -1;
             if (i_2 == 92) {
-                i_4 = buffer_1.method441();
+                i_4 = buffer_1.readUShort();
                 if (i_4 == 65535)
                     i_4 = -1;
             }
@@ -254,7 +254,7 @@ public class LocType extends Cacheable {
             intArray86 = new int[i_5 + 2];
 
             for (int i_6 = 0; i_6 <= i_5; i_6++) {
-                intArray86[i_6] = buffer_1.method441();
+                intArray86[i_6] = buffer_1.readUShort();
                 if (intArray86[i_6] == 65535)
                     intArray86[i_6] = -1;
             }

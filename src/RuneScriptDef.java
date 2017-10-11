@@ -42,14 +42,14 @@ public class RuneScriptDef extends Cacheable {
         RuneScriptDef runescriptdef_2 = new RuneScriptDef();
         Buffer buffer_3 = new Buffer(bytes_0);
         buffer_3.off = buffer_3.buf.length - 2;
-        int i_4 = buffer_3.method441();
+        int i_4 = buffer_3.readUShort();
         int i_5 = buffer_3.buf.length - 2 - i_4 - 12;
         buffer_3.off = i_5;
         int i_6 = buffer_3.readInt();
-        runescriptdef_2.int486 = buffer_3.method441();
-        runescriptdef_2.int487 = buffer_3.method441();
-        runescriptdef_2.int489 = buffer_3.method441();
-        runescriptdef_2.int488 = buffer_3.method441();
+        runescriptdef_2.int486 = buffer_3.readUShort();
+        runescriptdef_2.int487 = buffer_3.readUShort();
+        runescriptdef_2.int489 = buffer_3.readUShort();
+        runescriptdef_2.int488 = buffer_3.readUShort();
         int i_7 = buffer_3.readUByte();
         int i_8;
         int i_9;
@@ -57,7 +57,7 @@ public class RuneScriptDef extends Cacheable {
             runescriptdef_2.paramListArray1 = runescriptdef_2.method520(i_7);
 
             for (i_8 = 0; i_8 < i_7; i_8++) {
-                i_9 = buffer_3.method441();
+                i_9 = buffer_3.readUShort();
                 ParamList paramlist_10 = new ParamList(StaticClass25.staticMethod149(i_9));
                 runescriptdef_2.paramListArray1[i_8] = paramlist_10;
 
@@ -76,7 +76,7 @@ public class RuneScriptDef extends Cacheable {
         runescriptdef_2.stringArray5 = new String[i_6];
 
         for (i_8 = 0; buffer_3.off < i_5; runescriptdef_2.intArray66[i_8++] = i_9) {
-            i_9 = buffer_3.method441();
+            i_9 = buffer_3.readUShort();
             if (i_9 == 3)
                 runescriptdef_2.stringArray5[i_8] = buffer_3.method448();
             else if (i_9 < 100 && i_9 != 21 && i_9 != 38 && i_9 != 39)

@@ -9,7 +9,7 @@ public class Class3 {
     Class3(Buffer buffer_1, byte b_2, int i_3) {
         string2 = buffer_1.method448();
         string3 = buffer_1.method448();
-        int78 = buffer_1.method441();
+        int78 = buffer_1.readUShort();
         long1 = buffer_1.method445();
         int i_4 = buffer_1.readInt();
         int i_5 = buffer_1.readInt();

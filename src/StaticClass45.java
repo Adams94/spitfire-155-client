@@ -107,7 +107,7 @@ public class StaticClass45 {
                             if (staticJs5DownloadRequest1 == null) {
                                 staticBuffer4.off = 0;
                                 i_8 = staticBuffer4.readUByte();
-                                i_9 = staticBuffer4.method441();
+                                i_9 = staticBuffer4.readUShort();
                                 int i_10 = staticBuffer4.readUByte();
                                 i_11 = staticBuffer4.readInt();
                                 long long_12 = (i_8 << 16) + i_9;

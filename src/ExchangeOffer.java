@@ -12,7 +12,7 @@ public class ExchangeOffer {
 
     public ExchangeOffer(Buffer buffer_1, boolean bool_2) {
         flags = buffer_1.method440();
-        int272 = buffer_1.method441();
+        int272 = buffer_1.readUShort();
         int268 = buffer_1.readInt();
         int269 = buffer_1.readInt();
         int270 = buffer_1.readInt();
@@ -38,7 +38,7 @@ public class ExchangeOffer {
                         break;
 
                     --buffer_1.off;
-                    if (buffer_1.method441() != 0)
+                    if (buffer_1.readUShort() != 0)
                         throw new IllegalStateException("");
 
                     if (bool_5)

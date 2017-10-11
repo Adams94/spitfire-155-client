@@ -20,8 +20,8 @@ public class MidiFile {
     void readMidi(byte[] bytes_1) {
         buffer2.buf = bytes_1;
         buffer2.off = 10;
-        int i_2 = buffer2.method441();
-        int244 = buffer2.method441();
+        int i_2 = buffer2.readUShort();
+        int244 = buffer2.readUShort();
         int245 = 500000;
         intArray38 = new int[i_2];
 

@@ -10,7 +10,7 @@ public class WorldMapAreaDescriptorSub extends WorldMapAreaDescriptor {
 
     void method386(Buffer buffer_1, Buffer buffer_2, Buffer buffer_3, int i_4, boolean bool_5) {
         method64(buffer_1, i_4);
-        int i_7 = buffer_3.method441();
+        int i_7 = buffer_3.readUShort();
         hashSet8 = new HashSet(i_7);
 
         int i_8;
@@ -26,7 +26,7 @@ public class WorldMapAreaDescriptorSub extends WorldMapAreaDescriptor {
             hashSet8.add(worldmapregionstoragesub1_9);
         }
 
-        i_8 = buffer_3.method441();
+        i_8 = buffer_3.readUShort();
         hashSet7 = new HashSet(i_8);
 
         for (int i_14 = 0; i_14 < i_8; i_14++) {
@@ -46,7 +46,7 @@ public class WorldMapAreaDescriptorSub extends WorldMapAreaDescriptor {
 
     void method387(Buffer buffer_1, boolean bool_2) {
         list4 = new LinkedList();
-        int i_4 = buffer_1.method441();
+        int i_4 = buffer_1.readUShort();
 
         for (int i_5 = 0; i_5 < i_4; i_5++) {
             int i_6 = buffer_1.method455();

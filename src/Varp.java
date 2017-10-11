@@ -37,7 +37,7 @@ public class Varp extends Cacheable {
 
     void decode(Buffer buffer_1, int i_2) {
         if (i_2 == 5)
-            value = buffer_1.method441();
+            value = buffer_1.readUShort();
 
     }
 

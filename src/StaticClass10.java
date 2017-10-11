@@ -60,12 +60,12 @@ public class StaticClass10 {
         packet_0.finishBitAccess();
     }
 
-    static final void staticMethod53(Packet packet_0, int i_1) {
+    static final void updatePlayers(Packet buffer, int i_1) {
         System.out.println("start of player update");
-        int i_3 = packet_0.off;
+        int i_3 = buffer.off;
         staticInt51 = 0;
         int i_4 = 0;
-        packet_0.initBitAccess();
+        buffer.initBitAccess();
 
         int i_5;
         int i_6;
@@ -75,28 +75,32 @@ public class StaticClass10 {
         System.out.println("local count: " + staticInt50);
         for (i_5 = 0; i_5 < staticInt50; i_5++) {
             i_6 = staticIntArray19[i_5];
-            if ((staticByteArray1[i_6] & 0x1) == 0)
+            if ((staticByteArray1[i_6] & 0x1) == 0) {
                 if (i_4 > 0) {
                     --i_4;
                     staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                 } else {
-                    i_7 = packet_0.readBits(1);
+                    i_7 = buffer.readBits(1);
+
+                    System.out.println("reading 1 bit: " + i_7);
+
                     if (i_7 == 0) {
-                        i_4 = staticMethod54(packet_0);
+                        i_4 = staticMethod54(buffer);
                         staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                     } else
-                        staticMethod55(packet_0, i_6);
+                        staticMethod55(buffer, i_6);
                 }
+            }
         }
 
-        packet_0.finishBitAccess();
+        buffer.finishBitAccess();
 
         System.out.println("past 1st loop: i_4 should be 0 i_4=" + i_4);
 
         if (i_4 != 0)
             throw new RuntimeException();
         else {
-            packet_0.initBitAccess();
+            buffer.initBitAccess();
 
             System.out.println("starting of second loop");
             System.out.println("global count: " + staticInt50);
@@ -107,23 +111,23 @@ public class StaticClass10 {
                         --i_4;
                         staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                     } else {
-                        i_7 = packet_0.readBits(1);
+                        i_7 = buffer.readBits(1);
                         if (i_7 == 0) {
-                            i_4 = staticMethod54(packet_0);
+                            i_4 = staticMethod54(buffer);
                             staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                         } else
-                            staticMethod55(packet_0, i_6);
+                            staticMethod55(buffer, i_6);
                     }
             }
 
-            packet_0.finishBitAccess();
+            buffer.finishBitAccess();
 
             System.out.println("end of second loop i_4 should be 0 i_4=" + i_4);
 
             if (i_4 != 0)
                 throw new RuntimeException();
             else {
-                packet_0.initBitAccess();
+                buffer.initBitAccess();
 
                 System.out.println("start of third loop");
                 System.out.println("count: " + staticInt49);
@@ -135,22 +139,22 @@ public class StaticClass10 {
                             --i_4;
                             staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                         } else {
-                            i_7 = packet_0.readBits(1);
+                            i_7 = buffer.readBits(1);
                             if (i_7 == 0) {
-                                i_4 = staticMethod54(packet_0);
+                                i_4 = staticMethod54(buffer);
                                 staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
-                            } else if (staticMethod56(packet_0, i_6))
+                            } else if (staticMethod56(buffer, i_6))
                                 staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                         }
                 }
 
                 System.out.println("end of third loop i_4 should be 0 i_4=" + i_4);
 
-                packet_0.finishBitAccess();
+                buffer.finishBitAccess();
                 if (i_4 != 0)
                     throw new RuntimeException();
                 else {
-                    packet_0.initBitAccess();
+                    buffer.initBitAccess();
 
                     System.out.println("start of fourth loop");
                     System.out.println("count=" + staticInt49);
@@ -161,18 +165,18 @@ public class StaticClass10 {
                                 --i_4;
                                 staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                             } else {
-                                i_7 = packet_0.readBits(1);
+                                i_7 = buffer.readBits(1);
                                 if (i_7 == 0) {
-                                    i_4 = staticMethod54(packet_0);
+                                    i_4 = staticMethod54(buffer);
                                     staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
-                                } else if (staticMethod56(packet_0, i_6))
+                                } else if (staticMethod56(buffer, i_6))
                                     staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
                             }
                     }
 
-                    System.out.println("endo fourth loop i_4 should be 0 i_4=" + i_4);
+                    System.out.println("end of fourth loop i_4 should be 0 i_4=" + i_4);
 
-                    packet_0.finishBitAccess();
+                    buffer.finishBitAccess();
                     if (i_4 != 0)
                         throw new RuntimeException();
                     else {
@@ -191,9 +195,9 @@ public class StaticClass10 {
 
                         System.out.println("end of sixth loop");
 
-                        staticMethod57(packet_0);
-                        if (i_1 != packet_0.off - i_3)
-                            throw new RuntimeException(packet_0.off - i_3 + " " + i_1);
+                        staticMethod57(buffer);
+                        if (i_1 != buffer.off - i_3)
+                            throw new RuntimeException(buffer.off - i_3 + " " + i_1);
                     }
                 }
             }
@@ -202,16 +206,22 @@ public class StaticClass10 {
 
     static int staticMethod54(Packet packet_0) {
         int i_2 = packet_0.readBits(2);
-        int i_3;
-        if (i_2 == 0)
-            i_3 = 0;
-        else if (i_2 == 1)
-            i_3 = packet_0.readBits(5);
-        else if (i_2 == 2)
-            i_3 = packet_0.readBits(8);
-        else
-            i_3 = packet_0.readBits(11);
 
+        System.out.println("reading 2 bits: " + i_2);
+
+        int i_3;
+        if (i_2 == 0) {
+            i_3 = 0;
+        } else if (i_2 == 1) {
+            i_3 = packet_0.readBits(5);
+            System.out.println("reading 5 bits: " + i_3);
+        } else if (i_2 == 2) {
+            i_3 = packet_0.readBits(8);
+            System.out.println("reading 8 bits: " + i_3);
+        } else {
+            i_3 = packet_0.readBits(11);
+            System.out.println("reading 11 bits: " + i_3);
+        }
         return i_3;
     }
 
@@ -220,7 +230,12 @@ public class StaticClass10 {
         if (bool_3)
             staticIntArray23[staticInt51++] = i_1;
 
+        System.out.println("reading 1 bit: " + bool_3);
+
         int i_4 = packet_0.readBits(2);
+
+        System.out.println("reading 2 bits: " + i_4);
+
         Player player_5 = Client.staticPlayerArray1[i_1];
         if (i_4 == 0) {
             if (bool_3)
@@ -236,8 +251,14 @@ public class StaticClass10 {
 
                 staticIntArray20[i_1] = player_5.int620;
                 Client.staticPlayerArray1[i_1] = null;
-                if (packet_0.readBits(1) != 0)
+
+                int temp = packet_0.readBits(1);
+
+                System.out.println("reading 1 bit: " + temp);
+
+                if (temp != 0) {
                     staticMethod56(packet_0, i_1);
+                }
 
             }
         } else {
@@ -413,6 +434,9 @@ public class StaticClass10 {
 
     static boolean staticMethod56(Packet packet_0, int i_1) {
         int i_3 = packet_0.readBits(2);
+
+        System.out.println("reading 2 bits: " + i_3);
+
         int i_4;
         int i_5;
         int i_8;
@@ -420,14 +444,30 @@ public class StaticClass10 {
         int i_10;
         int i_11;
         if (i_3 == 0) {
-            if (packet_0.readBits(1) != 0)
+
+            int temp = packet_0.readBits(1);
+
+            System.out.println("reading 1 bit: " + temp);
+
+            if (temp != 0) {
                 staticMethod56(packet_0, i_1);
+            }
 
             i_4 = packet_0.readBits(13);
+
+            System.out.println("reading 13 bits: " + i_4);
+
             i_5 = packet_0.readBits(13);
+
+            System.out.println("reading 13 bits: " + i_5);
+
             boolean bool_12 = packet_0.readBits(1) == 1;
-            if (bool_12)
+
+            System.out.println("reading 1 bit: " + bool_12);
+
+            if (bool_12) {
                 staticIntArray23[staticInt51++] = i_1;
+            }
 
             if (Client.staticPlayerArray1[i_1] != null)
                 throw new RuntimeException();
@@ -451,6 +491,7 @@ public class StaticClass10 {
             }
         } else if (i_3 == 1) {
             i_4 = packet_0.readBits(2);
+            System.out.println("reading 2 bits: " + i_4);
             i_5 = staticIntArray22[i_1];
             staticIntArray22[i_1] = ((i_4 + (i_5 >> 28) & 0x3) << 28) + (i_5 & 0xfffffff);
             return false;
@@ -459,6 +500,7 @@ public class StaticClass10 {
             int i_7;
             if (i_3 == 2) {
                 i_4 = packet_0.readBits(5);
+                System.out.println("reading 5 bits: " + i_4);
                 i_5 = i_4 >> 3;
                 i_6 = i_4 & 0x7;
                 i_7 = staticIntArray22[i_1];
@@ -501,6 +543,7 @@ public class StaticClass10 {
                 return false;
             } else {
                 i_4 = packet_0.readBits(18);
+                System.out.println("reading 18 bits: " + i_4);
                 i_5 = i_4 >> 16;
                 i_6 = i_4 >> 8 & 0xff;
                 i_7 = i_4 & 0xff;
@@ -532,7 +575,9 @@ public class StaticClass10 {
 
             int i_7;
             if ((i_5 & 0x800) != 0) {
+                // gfx id
                 player_4.int640 = packet_0.readUShortLEA();
+                // delay
                 i_7 = packet_0.readIntME();
                 player_4.int613 = i_7 >> 16;
                 player_4.int630 = (i_7 & 0xffff) + Client.staticInt166;

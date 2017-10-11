@@ -32,8 +32,8 @@ public class AudioEnvelope {
         intArray6 = new int[int108];
 
         for (int i_2 = 0; i_2 < int108; i_2++) {
-            intArray7[i_2] = buffer_1.method441();
-            intArray6[i_2] = buffer_1.method441();
+            intArray7[i_2] = buffer_1.readUShort();
+            intArray6[i_2] = buffer_1.readUShort();
         }
 
     }

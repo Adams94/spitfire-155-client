@@ -23,8 +23,8 @@ public class SoundEffect {
             }
         }
 
-        int92 = buffer_1.method441();
-        int93 = buffer_1.method441();
+        int92 = buffer_1.readUShort();
+        int93 = buffer_1.readUShort();
     }
 
     public MusicNote method129() {

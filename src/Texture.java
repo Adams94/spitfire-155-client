@@ -13,7 +13,7 @@ public class Texture extends Node {
     static int[] staticIntArray125;
 
     Texture(Buffer buffer_1) {
-        int355 = buffer_1.method441();
+        int355 = buffer_1.readUShort();
         bool27 = buffer_1.readUByte() == 1;
         int i_2 = buffer_1.readUByte();
         if (i_2 >= 1 && i_2 <= 4) {
@@ -21,7 +21,7 @@ public class Texture extends Node {
 
             int i_3;
             for (i_3 = 0; i_3 < i_2; i_3++)
-                intArray44[i_3] = buffer_1.method441();
+                intArray44[i_3] = buffer_1.readUShort();
 
             if (i_2 > 1) {
                 intArray46 = new int[i_2 - 1];

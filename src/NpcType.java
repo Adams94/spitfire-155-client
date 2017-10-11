@@ -82,24 +82,24 @@ public class NpcType extends Cacheable {
             intArray88 = new int[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                intArray88[i_5] = buffer_1.method441();
+                intArray88[i_5] = buffer_1.readUShort();
         } else if (i_2 == 2)
             string39 = buffer_1.method448();
         else if (i_2 == 12)
             name = buffer_1.readUByte();
         else if (i_2 == 13)
-            tiles = -buffer_1.method441();
+            tiles = -buffer_1.readUShort();
         else if (i_2 == 14)
-            idle = buffer_1.method441();
+            idle = buffer_1.readUShort();
         else if (i_2 == 15)
-            walk = buffer_1.method441();
+            walk = buffer_1.readUShort();
         else if (i_2 == 16)
-            int537 = buffer_1.method441();
+            int537 = buffer_1.readUShort();
         else if (i_2 == 17) {
-            idle = buffer_1.method441();
-            int543 = -buffer_1.method441();
-            reverse = buffer_1.method441();
-            counterclockwise = buffer_1.method441();
+            idle = buffer_1.readUShort();
+            int543 = -buffer_1.readUShort();
+            reverse = buffer_1.readUShort();
+            counterclockwise = buffer_1.readUShort();
         } else if (i_2 >= 30 && i_2 < 35) {
             op[i_2 - 30] = buffer_1.method448();
             if (op[i_2 - 30].equalsIgnoreCase("Hidden"))
@@ -110,8 +110,8 @@ public class NpcType extends Cacheable {
             shortArray7 = new short[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++) {
-                shortArray6[i_5] = (short) buffer_1.method441();
-                shortArray7[i_5] = (short) buffer_1.method441();
+                shortArray6[i_5] = (short) buffer_1.readUShort();
+                shortArray7[i_5] = (short) buffer_1.readUShort();
             }
         } else if (i_2 == 41) {
             i_4 = buffer_1.readUByte();
@@ -119,23 +119,23 @@ public class NpcType extends Cacheable {
             shortArray9 = new short[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++) {
-                shortArray8[i_5] = (short) buffer_1.method441();
-                shortArray9[i_5] = (short) buffer_1.method441();
+                shortArray8[i_5] = (short) buffer_1.readUShort();
+                shortArray9[i_5] = (short) buffer_1.readUShort();
             }
         } else if (i_2 == 60) {
             i_4 = buffer_1.readUByte();
             intArray89 = new int[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                intArray89[i_5] = buffer_1.method441();
+                intArray89[i_5] = buffer_1.readUShort();
         } else if (i_2 == 93)
             bool60 = false;
         else if (i_2 == 95)
-            int539 = buffer_1.method441();
+            int539 = buffer_1.readUShort();
         else if (i_2 == 97)
-            int536 = buffer_1.method441();
+            int536 = buffer_1.readUShort();
         else if (i_2 == 98)
-            int540 = buffer_1.method441();
+            int540 = buffer_1.readUShort();
         else if (i_2 == 99)
             bool61 = true;
         else if (i_2 == 100)
@@ -143,9 +143,9 @@ public class NpcType extends Cacheable {
         else if (i_2 == 101)
             int542 = buffer_1.method440() * 5;
         else if (i_2 == 102)
-            int545 = buffer_1.method441();
+            int545 = buffer_1.readUShort();
         else if (i_2 == 103)
-            int544 = buffer_1.method441();
+            int544 = buffer_1.readUShort();
         else if (i_2 != 106 && i_2 != 118) {
             if (i_2 == 107)
                 bool62 = false;
@@ -156,17 +156,17 @@ public class NpcType extends Cacheable {
             else if (i_2 == 249)
                 paramList3 = StaticClass46.staticMethod195(buffer_1, paramList3);
         } else {
-            ubn = buffer_1.method441();
+            ubn = buffer_1.readUShort();
             if (ubn == 65535)
                 ubn = -1;
 
-            int546 = buffer_1.method441();
+            int546 = buffer_1.readUShort();
             if (int546 == 65535)
                 int546 = -1;
 
             i_4 = -1;
             if (i_2 == 118) {
-                i_4 = buffer_1.method441();
+                i_4 = buffer_1.readUShort();
                 if (i_4 == 65535)
                     i_4 = -1;
             }
@@ -175,7 +175,7 @@ public class NpcType extends Cacheable {
             intArray90 = new int[i_5 + 2];
 
             for (int i_6 = 0; i_6 <= i_5; i_6++) {
-                intArray90[i_6] = buffer_1.method441();
+                intArray90[i_6] = buffer_1.readUShort();
                 if (intArray90[i_6] == 65535)
                     intArray90[i_6] = -1;
             }

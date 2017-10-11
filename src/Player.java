@@ -61,7 +61,7 @@ public final class Player extends Actor {
                 i_8 = buffer_1.readUByte();
                 ints_5[i_6] = i_8 + (i_7 << 8);
                 if (i_6 == 0 && ints_5[0] == 65535) {
-                    i_4 = buffer_1.method441();
+                    i_4 = buffer_1.readUShort();
                     break;
                 }
 
@@ -83,32 +83,32 @@ public final class Player extends Actor {
             ints_10[i_7] = i_8;
         }
 
-        idle = buffer_1.method441();
+        idle = buffer_1.readUShort();
         if (idle == 65535)
             idle = -1;
 
-        unknown2 = buffer_1.method441();
+        unknown2 = buffer_1.readUShort();
         if (unknown2 == 65535)
             unknown2 = -1;
 
         int612 = unknown2;
-        walk = buffer_1.method441();
+        walk = buffer_1.readUShort();
         if (walk == 65535)
             walk = -1;
 
-        reverse = buffer_1.method441();
+        reverse = buffer_1.readUShort();
         if (reverse == 65535)
             reverse = -1;
 
-        counterclockwise = buffer_1.method441();
+        counterclockwise = buffer_1.readUShort();
         if (counterclockwise == 65535)
             counterclockwise = -1;
 
-        clockwise = buffer_1.method441();
+        clockwise = buffer_1.readUShort();
         if (clockwise == 65535)
             clockwise = -1;
 
-        run = buffer_1.method441();
+        run = buffer_1.readUShort();
         if (run == 65535)
             run = -1;
 
@@ -117,7 +117,7 @@ public final class Player extends Actor {
             ClientError.staticString24 = name;
 
         combatLevel = buffer_1.readUByte();
-        skillLevel = buffer_1.method441();
+        skillLevel = buffer_1.readUShort();
         bool78 = buffer_1.readUByte() == 1;
         if (Client.staticInt162 == 0 && Client.staticInt246 >= 2)
             bool78 = false;

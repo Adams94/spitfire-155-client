@@ -179,22 +179,22 @@ public class Class4 {
             if (i_6 < 0 || i_6 > 1)
                 return;
 
-            int i_7 = buffer_24.method441();
+            int i_7 = buffer_24.readUShort();
 
             int i_8;
             int i_9;
             int i_10;
             for (i_8 = 0; i_8 < i_7; i_8++) {
-                i_9 = buffer_24.method441();
+                i_9 = buffer_24.readUShort();
                 i_10 = buffer_24.readInt();
                 if (boolArray1[i_9])
                     intArray5[i_9] = i_10;
             }
 
-            i_8 = buffer_24.method441();
+            i_8 = buffer_24.readUShort();
 
             for (i_9 = 0; i_9 < i_8; i_9++) {
-                i_10 = buffer_24.method441();
+                i_10 = buffer_24.readUShort();
                 String string_11 = buffer_24.method448();
                 if (boolArray2[i_10])
                     stringArray2[i_10] = string_11;

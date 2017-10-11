@@ -52,15 +52,15 @@ public class SpotAnim extends Cacheable {
 
     void decode(Buffer buffer_1, int i_2) {
         if (i_2 == 1)
-            model = buffer_1.method441();
+            model = buffer_1.readUShort();
         else if (i_2 == 2)
-            anim = buffer_1.method441();
+            anim = buffer_1.readUShort();
         else if (i_2 == 4)
-            int551 = buffer_1.method441();
+            int551 = buffer_1.readUShort();
         else if (i_2 == 5)
-            int552 = buffer_1.method441();
+            int552 = buffer_1.readUShort();
         else if (i_2 == 6)
-            int553 = buffer_1.method441();
+            int553 = buffer_1.readUShort();
         else if (i_2 == 7)
             int554 = buffer_1.readUByte();
         else if (i_2 == 8)
@@ -74,8 +74,8 @@ public class SpotAnim extends Cacheable {
                 shortArray15 = new short[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++) {
-                    shortArray14[i_5] = (short) buffer_1.method441();
-                    shortArray15[i_5] = (short) buffer_1.method441();
+                    shortArray14[i_5] = (short) buffer_1.readUShort();
+                    shortArray15[i_5] = (short) buffer_1.readUShort();
                 }
             } else if (i_2 == 41) {
                 i_4 = buffer_1.readUByte();
@@ -83,8 +83,8 @@ public class SpotAnim extends Cacheable {
                 shortArray17 = new short[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++) {
-                    shortArray16[i_5] = (short) buffer_1.method441();
-                    shortArray17[i_5] = (short) buffer_1.method441();
+                    shortArray16[i_5] = (short) buffer_1.readUShort();
+                    shortArray17[i_5] = (short) buffer_1.readUShort();
                 }
             }
         }

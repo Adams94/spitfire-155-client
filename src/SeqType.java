@@ -51,21 +51,21 @@ public class SeqType extends Cacheable {
         int i_4;
         int i_5;
         if (i_2 == 1) {
-            i_4 = buffer_1.method441();
+            i_4 = buffer_1.readUShort();
             frameLengths = new int[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                frameLengths[i_5] = buffer_1.method441();
+                frameLengths[i_5] = buffer_1.readUShort();
 
             frameIds = new int[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                frameIds[i_5] = buffer_1.method441();
+                frameIds[i_5] = buffer_1.readUShort();
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                frameIds[i_5] += buffer_1.method441() << 16;
+                frameIds[i_5] += buffer_1.readUShort() << 16;
         } else if (i_2 == 2)
-            frameStep = buffer_1.method441();
+            frameStep = buffer_1.readUShort();
         else if (i_2 == 3) {
             i_4 = buffer_1.readUByte();
             intArray96 = new int[i_4 + 1];
@@ -79,9 +79,9 @@ public class SeqType extends Cacheable {
         else if (i_2 == 5)
             int605 = buffer_1.readUByte();
         else if (i_2 == 6)
-            leftHandItem = buffer_1.method441();
+            leftHandItem = buffer_1.readUShort();
         else if (i_2 == 7)
-            rightHandItem = buffer_1.method441();
+            rightHandItem = buffer_1.readUShort();
         else if (i_2 == 8)
             int606 = buffer_1.readUByte();
         else if (i_2 == 9)
@@ -95,10 +95,10 @@ public class SeqType extends Cacheable {
             intArray95 = new int[i_4];
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                intArray95[i_5] = buffer_1.method441();
+                intArray95[i_5] = buffer_1.readUShort();
 
             for (i_5 = 0; i_5 < i_4; i_5++)
-                intArray95[i_5] += buffer_1.method441() << 16;
+                intArray95[i_5] += buffer_1.readUShort() << 16;
         } else if (i_2 == 13) {
             i_4 = buffer_1.readUByte();
             intArray97 = new int[i_4];

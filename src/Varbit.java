@@ -19,7 +19,7 @@ public class Varbit extends Cacheable {
 
     void decode(Buffer buffer_1, int i_2) {
         if (i_2 == 1) {
-            id = buffer_1.method441();
+            id = buffer_1.readUShort();
             startBit = buffer_1.readUByte();
             endBit = buffer_1.readUByte();
         }

@@ -49,7 +49,7 @@ public class Identikit extends Cacheable {
                 models = new int[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++)
-                    models[i_5] = buffer_1.method441();
+                    models[i_5] = buffer_1.readUShort();
             } else if (i_2 == 3)
                 bool65 = true;
             else if (i_2 == 40) {
@@ -58,8 +58,8 @@ public class Identikit extends Cacheable {
                 shortArray11 = new short[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++) {
-                    shortArray10[i_5] = (short) buffer_1.method441();
-                    shortArray11[i_5] = (short) buffer_1.method441();
+                    shortArray10[i_5] = (short) buffer_1.readUShort();
+                    shortArray11[i_5] = (short) buffer_1.readUShort();
                 }
             } else if (i_2 == 41) {
                 i_4 = buffer_1.readUByte();
@@ -67,11 +67,11 @@ public class Identikit extends Cacheable {
                 shortArray13 = new short[i_4];
 
                 for (i_5 = 0; i_5 < i_4; i_5++) {
-                    shortArray12[i_5] = (short) buffer_1.method441();
-                    shortArray13[i_5] = (short) buffer_1.method441();
+                    shortArray12[i_5] = (short) buffer_1.readUShort();
+                    shortArray13[i_5] = (short) buffer_1.readUShort();
                 }
             } else if (i_2 >= 60 && i_2 < 70)
-                intArray91[i_2 - 60] = buffer_1.method441();
+                intArray91[i_2 - 60] = buffer_1.readUShort();
         }
 
     }

@@ -35,7 +35,7 @@ public class InvType extends Cacheable {
 
     void decode(Buffer buffer_1, int i_2) {
         if (i_2 == 2)
-            size = buffer_1.method441();
+            size = buffer_1.readUShort();
 
     }
 

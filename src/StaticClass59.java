@@ -170,29 +170,29 @@ public class StaticClass59 {
     static void staticMethod244(byte[] bytes_0) {
         Buffer buffer_2 = new Buffer(bytes_0);
         buffer_2.off = bytes_0.length - 2;
-        ExchangeOfferComparator1.staticInt119 = buffer_2.method441();
+        ExchangeOfferComparator1.staticInt119 = buffer_2.readUShort();
         staticIntArray74 = new int[ExchangeOfferComparator1.staticInt119];
         World.staticIntArray17 = new int[ExchangeOfferComparator1.staticInt119];
         Js5Worker.staticIntArray70 = new int[ExchangeOfferComparator1.staticInt119];
         Js5CacheWriteRequest.staticIntArray127 = new int[ExchangeOfferComparator1.staticInt119];
         Mus5Sub4.staticByteArrayArray6 = new byte[ExchangeOfferComparator1.staticInt119][];
         buffer_2.off = bytes_0.length - 7 - ExchangeOfferComparator1.staticInt119 * 8;
-        staticInt151 = buffer_2.method441();
-        StaticClass24.staticInt130 = buffer_2.method441();
+        staticInt151 = buffer_2.readUShort();
+        StaticClass24.staticInt130 = buffer_2.readUShort();
         int i_3 = (buffer_2.readUByte() & 0xff) + 1;
 
         int i_4;
         for (i_4 = 0; i_4 < ExchangeOfferComparator1.staticInt119; i_4++)
-            staticIntArray74[i_4] = buffer_2.method441();
+            staticIntArray74[i_4] = buffer_2.readUShort();
 
         for (i_4 = 0; i_4 < ExchangeOfferComparator1.staticInt119; i_4++)
-            World.staticIntArray17[i_4] = buffer_2.method441();
+            World.staticIntArray17[i_4] = buffer_2.readUShort();
 
         for (i_4 = 0; i_4 < ExchangeOfferComparator1.staticInt119; i_4++)
-            Js5Worker.staticIntArray70[i_4] = buffer_2.method441();
+            Js5Worker.staticIntArray70[i_4] = buffer_2.readUShort();
 
         for (i_4 = 0; i_4 < ExchangeOfferComparator1.staticInt119; i_4++)
-            Js5CacheWriteRequest.staticIntArray127[i_4] = buffer_2.method441();
+            Js5CacheWriteRequest.staticIntArray127[i_4] = buffer_2.readUShort();
 
         buffer_2.off = bytes_0.length - 7 - ExchangeOfferComparator1.staticInt119 * 8 - (i_3 - 1) * 3;
         StaticClass18.staticIntArray58 = new int[i_3];

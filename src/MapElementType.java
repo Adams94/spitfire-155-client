@@ -113,7 +113,7 @@ public class MapElementType extends Cacheable {
                 else if (i_2 == 18)
                     buffer_1.method455();
                 else if (i_2 == 19)
-                    int548 = buffer_1.method441();
+                    int548 = buffer_1.readUShort();
                 else if (i_2 == 21)
                     buffer_1.readInt();
                 else if (i_2 == 22)

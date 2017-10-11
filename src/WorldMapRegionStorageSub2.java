@@ -12,12 +12,12 @@ public class WorldMapRegionStorageSub2 extends WorldMapRegionStorage {
         else {
             int36 = buffer_2.readUByte();
             int35 = buffer_2.readUByte();
-            int34 = buffer_2.method441();
-            int37 = buffer_2.method441();
+            int34 = buffer_2.readUShort();
+            int37 = buffer_2.readUShort();
             int308 = buffer_2.readUByte();
             int306 = buffer_2.readUByte();
-            int32 = buffer_2.method441();
-            int33 = buffer_2.method441();
+            int32 = buffer_2.readUShort();
+            int33 = buffer_2.readUShort();
             int305 = buffer_2.readUByte();
             int307 = buffer_2.readUByte();
             int35 = Math.min(int35, 4);
