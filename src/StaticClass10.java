@@ -2,7 +2,7 @@
 public class StaticClass10 {
 
     public static int staticInt52;
-    static byte[] staticByteArray1 = new byte[2048];
+    static byte[] slotFlags = new byte[2048];
     static byte[] staticByteArray2 = new byte[2048];
     static Buffer[] staticBufferArray1 = new Buffer[2048];
     static int staticInt50 = 0;
@@ -41,7 +41,7 @@ public class StaticClass10 {
 
         staticInt50 = 0;
         staticIntArray19[staticInt50++] = i_2;
-        staticByteArray1[i_2] = 0;
+        slotFlags[i_2] = 0;
         staticInt49 = 0;
 
         for (int i_8 = 1; i_8 < 2048; i_8++)
@@ -54,7 +54,7 @@ public class StaticClass10 {
                 staticIntArray18[i_8] = 0;
                 staticIntArray20[i_8] = -1;
                 staticIntArray21[staticInt49++] = i_8;
-                staticByteArray1[i_8] = 0;
+                slotFlags[i_8] = 0;
             }
 
         packet_0.finishBitAccess();
@@ -71,22 +71,22 @@ public class StaticClass10 {
         int i_6;
         int i_7;
 
-        System.out.println("start of first loop");
+        System.out.println("start of local update1");
         System.out.println("local count: " + staticInt50);
         for (i_5 = 0; i_5 < staticInt50; i_5++) {
             i_6 = staticIntArray19[i_5];
-            if ((staticByteArray1[i_6] & 0x1) == 0) {
+            if ((slotFlags[i_6] & 0x1) == 0) {
                 if (i_4 > 0) {
                     --i_4;
-                    staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                    slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                 } else {
-                    i_7 = buffer.readBits(1);
+                    i_7 = buffer.readBits(1); // requires flag based updates?
 
                     System.out.println("reading 1 bit: " + i_7);
 
                     if (i_7 == 0) {
-                        i_4 = staticMethod54(buffer);
-                        staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                        i_4 = writeSkipCount(buffer);
+                        slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                     } else
                         staticMethod55(buffer, i_6);
                 }
@@ -106,15 +106,15 @@ public class StaticClass10 {
             System.out.println("global count: " + staticInt50);
             for (i_5 = 0; i_5 < staticInt50; i_5++) {
                 i_6 = staticIntArray19[i_5];
-                if ((staticByteArray1[i_6] & 0x1) != 0)
+                if ((slotFlags[i_6] & 0x1) != 0)
                     if (i_4 > 0) {
                         --i_4;
-                        staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                        slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                     } else {
                         i_7 = buffer.readBits(1);
                         if (i_7 == 0) {
-                            i_4 = staticMethod54(buffer);
-                            staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                            i_4 = writeSkipCount(buffer);
+                            slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                         } else
                             staticMethod55(buffer, i_6);
                     }
@@ -134,17 +134,17 @@ public class StaticClass10 {
 
                 for (i_5 = 0; i_5 < staticInt49; i_5++) {
                     i_6 = staticIntArray21[i_5];
-                    if ((staticByteArray1[i_6] & 0x1) != 0)
+                    if ((slotFlags[i_6] & 0x1) != 0)
                         if (i_4 > 0) {
                             --i_4;
-                            staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                            slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                         } else {
                             i_7 = buffer.readBits(1);
                             if (i_7 == 0) {
-                                i_4 = staticMethod54(buffer);
-                                staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                                i_4 = writeSkipCount(buffer);
+                                slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                             } else if (staticMethod56(buffer, i_6))
-                                staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                                slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                         }
                 }
 
@@ -160,18 +160,22 @@ public class StaticClass10 {
                     System.out.println("count=" + staticInt49);
                     for (i_5 = 0; i_5 < staticInt49; i_5++) {
                         i_6 = staticIntArray21[i_5];
-                        if ((staticByteArray1[i_6] & 0x1) == 0)
+                        if ((slotFlags[i_6] & 0x1) == 0) {
                             if (i_4 > 0) {
                                 --i_4;
-                                staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                                slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                             } else {
                                 i_7 = buffer.readBits(1);
+
+                                System.out.println("reading 1 bit: " + i_7);
+
                                 if (i_7 == 0) {
-                                    i_4 = staticMethod54(buffer);
-                                    staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                                    i_4 = writeSkipCount(buffer);
+                                    slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                                 } else if (staticMethod56(buffer, i_6))
-                                    staticByteArray1[i_6] = (byte) (staticByteArray1[i_6] | 0x2);
+                                    slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                             }
+                        }
                     }
 
                     System.out.println("end of fourth loop i_4 should be 0 i_4=" + i_4);
@@ -185,7 +189,7 @@ public class StaticClass10 {
 
                         System.out.println("fifth loop count is 2048");
                         for (i_5 = 1; i_5 < 2048; i_5++) {
-                            staticByteArray1[i_5] = (byte) (staticByteArray1[i_5] >> 1);
+                            slotFlags[i_5] = (byte) (slotFlags[i_5] >> 1);
                             Player player_8 = Client.staticPlayerArray1[i_5];
                             if (player_8 != null)
                                 staticIntArray19[staticInt50++] = i_5;
@@ -204,7 +208,7 @@ public class StaticClass10 {
         }
     }
 
-    static int staticMethod54(Packet packet_0) {
+    static int writeSkipCount(Packet packet_0) { // skip players
         int i_2 = packet_0.readBits(2);
 
         System.out.println("reading 2 bits: " + i_2);
@@ -226,18 +230,18 @@ public class StaticClass10 {
     }
 
     static void staticMethod55(Packet packet_0, int i_1) {
-        boolean bool_3 = packet_0.readBits(1) == 1;
+        boolean bool_3 = packet_0.readBits(1) == 1; // no mask update needed
         if (bool_3)
             staticIntArray23[staticInt51++] = i_1;
 
         System.out.println("reading 1 bit: " + bool_3);
 
-        int i_4 = packet_0.readBits(2);
+        int i_4 = packet_0.readBits(2); // request remove
 
         System.out.println("reading 2 bits: " + i_4);
 
         Player player_5 = Client.staticPlayerArray1[i_1];
-        if (i_4 == 0) {
+        if (i_4 == 0) { // request remove
             if (bool_3)
                 player_5.bool76 = false;
             else if (i_1 == Client.staticInt293)
