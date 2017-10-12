@@ -8,7 +8,7 @@ public class StaticClass10 {
     static int localPlayersIndexesCount = 0;
     static int[] localPlayerIndexes = new int[2048];
     static int globalPlayerIndexCount = 0;
-    static int[] staticIntArray21 = new int[2048];
+    static int[] globalPlayerIndexes = new int[2048];
     static int[] staticIntArray22 = new int[2048];
     static int[] staticIntArray18 = new int[2048];
     static int[] staticIntArray20 = new int[2048];
@@ -53,7 +53,7 @@ public class StaticClass10 {
                 staticIntArray22[i_8] = (i_10 << 28) + (i_11 << 14) + i_12;
                 staticIntArray18[i_8] = 0;
                 staticIntArray20[i_8] = -1;
-                staticIntArray21[globalPlayerIndexCount++] = i_8;
+                globalPlayerIndexes[globalPlayerIndexCount++] = i_8;
                 slotFlags[i_8] = 0;
             }
 
@@ -131,7 +131,7 @@ public class StaticClass10 {
                 System.out.println("count: " + globalPlayerIndexCount);
 
                 for (int index = 0; index < globalPlayerIndexCount; index++) {
-                    final int playerIndex = staticIntArray21[index];
+                    final int playerIndex = globalPlayerIndexes[index];
                     if ((slotFlags[playerIndex] & 0x1) != 0) {
                         if (skipCount > 0) {
                             --skipCount;
@@ -158,7 +158,7 @@ public class StaticClass10 {
                     System.out.println("start of fourth loop");
                     System.out.println("count=" + globalPlayerIndexCount);
                     for (int index = 0; index < globalPlayerIndexCount; index++) {
-                        final int playerIndex = staticIntArray21[index];
+                        final int playerIndex = globalPlayerIndexes[index];
                         if ((slotFlags[playerIndex] & 0x1) == 0) {
                             if (skipCount > 0) {
                                 --skipCount;
@@ -194,7 +194,7 @@ public class StaticClass10 {
                             if (player_8 != null)
                                 localPlayerIndexes[localPlayersIndexesCount++] = index;
                             else
-                                staticIntArray21[globalPlayerIndexCount++] = index;
+                                globalPlayerIndexes[globalPlayerIndexCount++] = index;
                         }
 
                         System.out.println("end of sixth loop");
