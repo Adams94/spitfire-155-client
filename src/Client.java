@@ -2335,7 +2335,7 @@ public final class Client extends GameShell {
         staticClass5_5 = Class5.staticClass5_3;
         staticClass5_6 = Class5.staticClass5_3;
         staticInt186 = 0;
-        StaticClass10.staticInt50 = 0;
+        StaticClass10.localPlayersIndexesCount = 0;
 
         int i_1;
         for (i_1 = 0; i_1 < 2048; i_1++) {
@@ -2891,7 +2891,7 @@ public final class Client extends GameShell {
                     if (staticInt190 > 750)
                         staticMethod261();
                     else {
-                        i_2 = StaticClass10.staticInt50;
+                        i_2 = StaticClass10.localPlayersIndexesCount;
                         ints_21 = StaticClass10.localPlayerIndexes;
 
                         for (i_4 = 0; i_4 < i_2; i_4++) {
@@ -3431,7 +3431,7 @@ public final class Client extends GameShell {
         int[] ints_1 = StaticClass10.localPlayerIndexes;
 
         int i_2;
-        for (i_2 = 0; i_2 < StaticClass10.staticInt50; i_2++) {
+        for (i_2 = 0; i_2 < StaticClass10.localPlayersIndexesCount; i_2++) {
             Player player_3 = staticPlayerArray1[ints_1[i_2]];
             if (player_3 != null && player_3.int615 > 0) {
                 --player_3.int615;
@@ -4174,7 +4174,7 @@ public final class Client extends GameShell {
             staticMethod281(staticPlayerArray1[staticInt234], false);
 
         staticMethod282(true);
-        int i_5 = StaticClass10.staticInt50;
+        int i_5 = StaticClass10.localPlayersIndexesCount;
         int[] ints_6 = StaticClass10.localPlayerIndexes;
 
         int i_7;
@@ -4389,7 +4389,7 @@ public final class Client extends GameShell {
         if (player_0 != null && player_0.method609() && !player_0.bool78) {
             int i_3 = player_0.int681 << 14;
             player_0.bool77 = false;
-            if ((staticBool25 && StaticClass10.staticInt50 > 50 || StaticClass10.staticInt50 > 200) && bool_1 && player_0.stance == player_0.idle)
+            if ((staticBool25 && StaticClass10.localPlayersIndexesCount > 50 || StaticClass10.localPlayersIndexesCount > 200) && bool_1 && player_0.stance == player_0.idle)
                 player_0.bool77 = true;
 
             int i_4 = player_0.int626 >> 7;
@@ -4597,7 +4597,7 @@ public final class Client extends GameShell {
                     return;
             }
 
-            int i_75 = StaticClass10.staticInt50;
+            int i_75 = StaticClass10.localPlayersIndexesCount;
             int[] ints_8 = StaticClass10.localPlayerIndexes;
             int i_9 = 3;
             int i_15;
@@ -5096,7 +5096,7 @@ public final class Client extends GameShell {
         staticInt211 = 0;
         boolean bool_5 = false;
         int i_6 = -1;
-        int i_7 = StaticClass10.staticInt50;
+        int i_7 = StaticClass10.localPlayersIndexesCount;
         int[] ints_8 = StaticClass10.localPlayerIndexes;
 
         int i_9;
@@ -6892,7 +6892,7 @@ public final class Client extends GameShell {
                 }
 
                 if (staticInt189 == 208) {
-                    StaticClass10.staticInt50 = 0;
+                    StaticClass10.localPlayersIndexesCount = 0;
 
                     for (i_33 = 0; i_33 < 2048; i_33++) {
                         StaticClass10.staticBufferArray1[i_33] = null;
@@ -11052,7 +11052,7 @@ public final class Client extends GameShell {
                                                     staticMethod321(npc_49.npcType1, staticIntArray91[i_48], i_24, i_43);
                                             }
 
-                                            i_48 = StaticClass10.staticInt50;
+                                            i_48 = StaticClass10.localPlayersIndexesCount;
                                             ints_50 = StaticClass10.localPlayerIndexes;
 
                                             for (i_54 = 0; i_54 < i_48; i_54++) {
@@ -11077,7 +11077,7 @@ public final class Client extends GameShell {
                                                     staticMethod321(npc_49.npcType1, staticIntArray91[i_48], i_24, i_43);
                                             }
 
-                                            i_48 = StaticClass10.staticInt50;
+                                            i_48 = StaticClass10.localPlayersIndexesCount;
                                             ints_50 = StaticClass10.localPlayerIndexes;
 
                                             for (i_54 = 0; i_54 < i_48; i_54++) {
@@ -12030,7 +12030,7 @@ public final class Client extends GameShell {
                     }
                 }
 
-                i_9 = StaticClass10.staticInt50;
+                i_9 = StaticClass10.localPlayersIndexesCount;
                 int[] ints_19 = StaticClass10.localPlayerIndexes;
 
                 for (i_11 = 0; i_11 < i_9; i_11++) {

@@ -802,7 +802,7 @@ public class StaticClass15 {
                                                                                                                                         } else {
                                                                                                                                             i_15 = staticIntArray26[--staticInt70];
                                                                                                                                             string_38 = staticStringArray2[--staticInt72];
-                                                                                                                                            i_34 = StaticClass10.staticInt50;
+                                                                                                                                            i_34 = StaticClass10.localPlayersIndexesCount;
                                                                                                                                             int[] ints_39 = StaticClass10.localPlayerIndexes;
                                                                                                                                             boolean bool_47 = false;
 
