@@ -64,20 +64,19 @@ public class StaticClass10 {
         System.out.println("start of player update");
         int i_3 = buffer.off;
         staticInt51 = 0;
-        int i_4 = 0;
+        int skipCount = 0;
         buffer.initBitAccess();
 
-        int i_5;
         int i_6;
         int i_7;
 
         System.out.println("start of local update1");
         System.out.println("local count: " + staticInt50);
-        for (i_5 = 0; i_5 < staticInt50; i_5++) {
-            i_6 = staticIntArray19[i_5];
+        for (int playerIndex = 0; playerIndex < staticInt50; playerIndex++) {
+            i_6 = staticIntArray19[playerIndex];
             if ((slotFlags[i_6] & 0x1) == 0) {
-                if (i_4 > 0) {
-                    --i_4;
+                if (skipCount > 0) {
+                    --skipCount;
                     slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                 } else {
                     i_7 = buffer.readBits(1); // requires flag based updates?
@@ -85,7 +84,7 @@ public class StaticClass10 {
                     System.out.println("reading 1 bit: " + i_7);
 
                     if (i_7 == 0) {
-                        i_4 = writeSkipCount(buffer);
+                        skipCount = writeSkipCount(buffer);
                         slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                     } else
                         staticMethod55(buffer, i_6);
@@ -95,25 +94,25 @@ public class StaticClass10 {
 
         buffer.finishBitAccess();
 
-        System.out.println("past 1st loop: i_4 should be 0 i_4=" + i_4);
+        System.out.println("past 1st loop: i_4 should be 0 i_4=" + skipCount);
 
-        if (i_4 != 0)
+        if (skipCount != 0)
             throw new RuntimeException();
         else {
             buffer.initBitAccess();
 
             System.out.println("starting of second loop");
             System.out.println("global count: " + staticInt50);
-            for (i_5 = 0; i_5 < staticInt50; i_5++) {
-                i_6 = staticIntArray19[i_5];
+            for (int playerIndex = 0; playerIndex < staticInt50; playerIndex++) {
+                i_6 = staticIntArray19[playerIndex];
                 if ((slotFlags[i_6] & 0x1) != 0)
-                    if (i_4 > 0) {
-                        --i_4;
+                    if (skipCount > 0) {
+                        --skipCount;
                         slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                     } else {
                         i_7 = buffer.readBits(1);
                         if (i_7 == 0) {
-                            i_4 = writeSkipCount(buffer);
+                            skipCount = writeSkipCount(buffer);
                             slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                         } else
                             staticMethod55(buffer, i_6);
@@ -122,9 +121,9 @@ public class StaticClass10 {
 
             buffer.finishBitAccess();
 
-            System.out.println("end of second loop i_4 should be 0 i_4=" + i_4);
+            System.out.println("end of second loop i_4 should be 0 i_4=" + skipCount);
 
-            if (i_4 != 0)
+            if (skipCount != 0)
                 throw new RuntimeException();
             else {
                 buffer.initBitAccess();
@@ -132,37 +131,37 @@ public class StaticClass10 {
                 System.out.println("start of third loop");
                 System.out.println("count: " + staticInt49);
 
-                for (i_5 = 0; i_5 < staticInt49; i_5++) {
-                    i_6 = staticIntArray21[i_5];
+                for (int playerIndex = 0; playerIndex < staticInt49; playerIndex++) {
+                    i_6 = staticIntArray21[playerIndex];
                     if ((slotFlags[i_6] & 0x1) != 0)
-                        if (i_4 > 0) {
-                            --i_4;
+                        if (skipCount > 0) {
+                            --skipCount;
                             slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                         } else {
                             i_7 = buffer.readBits(1);
                             if (i_7 == 0) {
-                                i_4 = writeSkipCount(buffer);
+                                skipCount = writeSkipCount(buffer);
                                 slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                             } else if (staticMethod56(buffer, i_6))
                                 slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                         }
                 }
 
-                System.out.println("end of third loop i_4 should be 0 i_4=" + i_4);
+                System.out.println("end of third loop i_4 should be 0 i_4=" + skipCount);
 
                 buffer.finishBitAccess();
-                if (i_4 != 0)
+                if (skipCount != 0)
                     throw new RuntimeException();
                 else {
                     buffer.initBitAccess();
 
                     System.out.println("start of fourth loop");
                     System.out.println("count=" + staticInt49);
-                    for (i_5 = 0; i_5 < staticInt49; i_5++) {
-                        i_6 = staticIntArray21[i_5];
+                    for (int playerIndex = 0; playerIndex < staticInt49; playerIndex++) {
+                        i_6 = staticIntArray21[playerIndex];
                         if ((slotFlags[i_6] & 0x1) == 0) {
-                            if (i_4 > 0) {
-                                --i_4;
+                            if (skipCount > 0) {
+                                --skipCount;
                                 slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                             } else {
                                 i_7 = buffer.readBits(1);
@@ -170,7 +169,7 @@ public class StaticClass10 {
                                 System.out.println("reading 1 bit: " + i_7);
 
                                 if (i_7 == 0) {
-                                    i_4 = writeSkipCount(buffer);
+                                    skipCount = writeSkipCount(buffer);
                                     slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
                                 } else if (staticMethod56(buffer, i_6))
                                     slotFlags[i_6] = (byte) (slotFlags[i_6] | 0x2);
@@ -178,23 +177,24 @@ public class StaticClass10 {
                         }
                     }
 
-                    System.out.println("end of fourth loop i_4 should be 0 i_4=" + i_4);
+                    System.out.println("end of fourth loop i_4 should be 0 i_4=" + skipCount);
 
                     buffer.finishBitAccess();
-                    if (i_4 != 0)
+                    if (skipCount != 0) {
                         throw new RuntimeException();
+                    }
                     else {
                         staticInt50 = 0;
                         staticInt49 = 0;
 
                         System.out.println("fifth loop count is 2048");
-                        for (i_5 = 1; i_5 < 2048; i_5++) {
-                            slotFlags[i_5] = (byte) (slotFlags[i_5] >> 1);
-                            Player player_8 = Client.staticPlayerArray1[i_5];
+                        for (int playerIndex = 1; playerIndex < 2048; playerIndex++) {
+                            slotFlags[playerIndex] = (byte) (slotFlags[playerIndex] >> 1);
+                            Player player_8 = Client.staticPlayerArray1[playerIndex];
                             if (player_8 != null)
-                                staticIntArray19[staticInt50++] = i_5;
+                                staticIntArray19[staticInt50++] = playerIndex;
                             else
-                                staticIntArray21[staticInt49++] = i_5;
+                                staticIntArray21[staticInt49++] = playerIndex;
                         }
 
                         System.out.println("end of sixth loop");
