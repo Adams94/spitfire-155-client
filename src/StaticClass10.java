@@ -83,8 +83,9 @@ public class StaticClass10 {
                     if (i_7 == 0) {
                         skipCount = writeSkipCount(buffer);
                         slotFlags[playerIndex] = (byte) (slotFlags[playerIndex] | 0x2);
-                    } else
+                    } else {
                         staticMethod55(buffer, playerIndex);
+                    }
                 }
             }
         }
@@ -210,25 +211,25 @@ public class StaticClass10 {
         }
     }
 
-    static int writeSkipCount(Packet packet_0) { // skip players
-        int i_2 = packet_0.readBits(2);
+    static int writeSkipCount(Packet buffer) { // skip players
+        final int skipSizeType = buffer.readBits(2);
 
-        System.out.println("reading 2 bits: " + i_2);
+        System.out.println("reading 2 bits: " + skipSizeType + " (skipSizeType)");
 
-        int i_3;
-        if (i_2 == 0) {
-            i_3 = 0;
-        } else if (i_2 == 1) {
-            i_3 = packet_0.readBits(5);
-            System.out.println("reading 5 bits: " + i_3);
-        } else if (i_2 == 2) {
-            i_3 = packet_0.readBits(8);
-            System.out.println("reading 8 bits: " + i_3);
+        int skipSize;
+        if (skipSizeType == 0) {
+            return 0;
+        } else if (skipSizeType == 1) {
+            skipSize = buffer.readBits(5);
+            System.out.println("reading 5 bits: " + skipSize + " (skipSize)");
+        } else if (skipSizeType == 2) {
+            skipSize = buffer.readBits(8);
+            System.out.println("reading 8 bits: " + skipSize + " (skipSize)");
         } else {
-            i_3 = packet_0.readBits(11);
-            System.out.println("reading 11 bits: " + i_3);
+            skipSize = buffer.readBits(11);
+            System.out.println("reading 11 bits: " + skipSize + " (skipSize)");
         }
-        return i_3;
+        return skipSize;
     }
 
     static void staticMethod55(Packet packet_0, int i_1) {
