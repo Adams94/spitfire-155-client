@@ -7,7 +7,7 @@ public class StaticClass10 {
     static Buffer[] staticBufferArray1 = new Buffer[2048];
     static int localPlayersIndexesCount = 0;
     static int[] localPlayerIndexes = new int[2048];
-    static int staticInt49 = 0;
+    static int globalPlayerIndexCount = 0;
     static int[] staticIntArray21 = new int[2048];
     static int[] staticIntArray22 = new int[2048];
     static int[] staticIntArray18 = new int[2048];
@@ -42,7 +42,7 @@ public class StaticClass10 {
         localPlayersIndexesCount = 0;
         localPlayerIndexes[localPlayersIndexesCount++] = i_2;
         slotFlags[i_2] = 0;
-        staticInt49 = 0;
+        globalPlayerIndexCount = 0;
 
         for (int i_8 = 1; i_8 < 2048; i_8++)
             if (i_8 != i_2) {
@@ -53,7 +53,7 @@ public class StaticClass10 {
                 staticIntArray22[i_8] = (i_10 << 28) + (i_11 << 14) + i_12;
                 staticIntArray18[i_8] = 0;
                 staticIntArray20[i_8] = -1;
-                staticIntArray21[staticInt49++] = i_8;
+                staticIntArray21[globalPlayerIndexCount++] = i_8;
                 slotFlags[i_8] = 0;
             }
 
@@ -102,7 +102,7 @@ public class StaticClass10 {
             System.out.println("local count: " + localPlayersIndexesCount);
             for (int index = 0; index < localPlayersIndexesCount; index++) {
                 final int playerIndex = localPlayerIndexes[index];
-                if ((slotFlags[playerIndex] & 0x1) != 0)
+                if ((slotFlags[playerIndex] & 0x1) != 0) {
                     if (skipCount > 0) {
                         --skipCount;
                         slotFlags[playerIndex] = (byte) (slotFlags[playerIndex] | 0x2);
@@ -111,9 +111,11 @@ public class StaticClass10 {
                         if (i_7 == 0) {
                             skipCount = writeSkipCount(buffer);
                             slotFlags[playerIndex] = (byte) (slotFlags[playerIndex] | 0x2);
-                        } else
+                        } else {
                             staticMethod55(buffer, playerIndex);
+                        }
                     }
+                }
             }
 
             buffer.finishBitAccess();
@@ -126,11 +128,11 @@ public class StaticClass10 {
                 buffer.initBitAccess();
 
                 System.out.println("start of third loop");
-                System.out.println("count: " + staticInt49);
+                System.out.println("count: " + globalPlayerIndexCount);
 
-                for (int index = 0; index < staticInt49; index++) {
+                for (int index = 0; index < globalPlayerIndexCount; index++) {
                     final int playerIndex = staticIntArray21[index];
-                    if ((slotFlags[playerIndex] & 0x1) != 0)
+                    if ((slotFlags[playerIndex] & 0x1) != 0) {
                         if (skipCount > 0) {
                             --skipCount;
                             slotFlags[playerIndex] = (byte) (slotFlags[playerIndex] | 0x2);
@@ -142,6 +144,7 @@ public class StaticClass10 {
                             } else if (staticMethod56(buffer, playerIndex))
                                 slotFlags[playerIndex] = (byte) (slotFlags[playerIndex] | 0x2);
                         }
+                    }
                 }
 
                 System.out.println("end of third loop i_4 should be 0 i_4=" + skipCount);
@@ -153,8 +156,8 @@ public class StaticClass10 {
                     buffer.initBitAccess();
 
                     System.out.println("start of fourth loop");
-                    System.out.println("count=" + staticInt49);
-                    for (int index = 0; index < staticInt49; index++) {
+                    System.out.println("count=" + globalPlayerIndexCount);
+                    for (int index = 0; index < globalPlayerIndexCount; index++) {
                         final int playerIndex = staticIntArray21[index];
                         if ((slotFlags[playerIndex] & 0x1) == 0) {
                             if (skipCount > 0) {
@@ -182,7 +185,7 @@ public class StaticClass10 {
                     }
                     else {
                         localPlayersIndexesCount = 0;
-                        staticInt49 = 0;
+                        globalPlayerIndexCount = 0;
 
                         System.out.println("fifth loop count is 2048");
                         for (int index = 1; index < 2048; index++) {
@@ -191,7 +194,7 @@ public class StaticClass10 {
                             if (player_8 != null)
                                 localPlayerIndexes[localPlayersIndexesCount++] = index;
                             else
-                                staticIntArray21[staticInt49++] = index;
+                                staticIntArray21[globalPlayerIndexCount++] = index;
                         }
 
                         System.out.println("end of sixth loop");
