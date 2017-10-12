@@ -2892,7 +2892,7 @@ public final class Client extends GameShell {
                         staticMethod261();
                     else {
                         i_2 = StaticClass10.staticInt50;
-                        ints_21 = StaticClass10.staticIntArray19;
+                        ints_21 = StaticClass10.localPlayerIndexes;
 
                         for (i_4 = 0; i_4 < i_2; i_4++) {
                             Player player_28 = staticPlayerArray1[ints_21[i_4]];
@@ -3428,7 +3428,7 @@ public final class Client extends GameShell {
     }
 
     static final void staticMethod268() {
-        int[] ints_1 = StaticClass10.staticIntArray19;
+        int[] ints_1 = StaticClass10.localPlayerIndexes;
 
         int i_2;
         for (i_2 = 0; i_2 < StaticClass10.staticInt50; i_2++) {
@@ -4175,7 +4175,7 @@ public final class Client extends GameShell {
 
         staticMethod282(true);
         int i_5 = StaticClass10.staticInt50;
-        int[] ints_6 = StaticClass10.staticIntArray19;
+        int[] ints_6 = StaticClass10.localPlayerIndexes;
 
         int i_7;
         for (i_7 = 0; i_7 < i_5; i_7++)
@@ -4598,7 +4598,7 @@ public final class Client extends GameShell {
             }
 
             int i_75 = StaticClass10.staticInt50;
-            int[] ints_8 = StaticClass10.staticIntArray19;
+            int[] ints_8 = StaticClass10.localPlayerIndexes;
             int i_9 = 3;
             int i_15;
             int i_22;
@@ -5097,7 +5097,7 @@ public final class Client extends GameShell {
         boolean bool_5 = false;
         int i_6 = -1;
         int i_7 = StaticClass10.staticInt50;
-        int[] ints_8 = StaticClass10.staticIntArray19;
+        int[] ints_8 = StaticClass10.localPlayerIndexes;
 
         int i_9;
         for (i_9 = 0; i_9 < i_7 + staticInt186; i_9++) {
@@ -11053,7 +11053,7 @@ public final class Client extends GameShell {
                                             }
 
                                             i_48 = StaticClass10.staticInt50;
-                                            ints_50 = StaticClass10.staticIntArray19;
+                                            ints_50 = StaticClass10.localPlayerIndexes;
 
                                             for (i_54 = 0; i_54 < i_48; i_54++) {
                                                 player_32 = staticPlayerArray1[ints_50[i_54]];
@@ -11078,7 +11078,7 @@ public final class Client extends GameShell {
                                             }
 
                                             i_48 = StaticClass10.staticInt50;
-                                            ints_50 = StaticClass10.staticIntArray19;
+                                            ints_50 = StaticClass10.localPlayerIndexes;
 
                                             for (i_54 = 0; i_54 < i_48; i_54++) {
                                                 player_32 = staticPlayerArray1[ints_50[i_54]];
@@ -12031,7 +12031,7 @@ public final class Client extends GameShell {
                 }
 
                 i_9 = StaticClass10.staticInt50;
-                int[] ints_19 = StaticClass10.staticIntArray19;
+                int[] ints_19 = StaticClass10.localPlayerIndexes;
 
                 for (i_11 = 0; i_11 < i_9; i_11++) {
                     Player player_22 = staticPlayerArray1[ints_19[i_11]];
